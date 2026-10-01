@@ -73,7 +73,7 @@ print("Um deinen Zug zu machen, gib die Zahl ein, die zur Position auf dem Spiel
 
 
 for i in range(9):
-    marker = "X" if i % 2 == 1 else "O"      
+    marker = "X" if i % 2 == 0 else "O"      
     position = int(input("Füge deine Position ein (1-9): "))
     make_move(board, position, marker)
     display_board(board)
