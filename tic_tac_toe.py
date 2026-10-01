@@ -7,7 +7,7 @@
 def get_player_names():
     player_names = {"X": "Spieler 1", "O": "Spieler 2"}
     for marker, name in player_names.items():
-        player_names[marker] = input(f"Enter the name of {name}: ")
+        player_names[marker] = input(f"Füge den Namen von {name} ein: ")
     return player_names
 
 
@@ -17,7 +17,7 @@ def create_board():
 
 
 def display_board(board):
-    print("Current Board:")
+    print("Aktuelles Spielfeld:")
     for i, row in enumerate(board):
         print(" | ".join(row))
         if i < 2:
@@ -60,22 +60,21 @@ def check_draw(board):
 # Tic-tac-toe game
 if __name__ == "__main__":
     # Start a new round of Tic-tac-toe
-    print("Welcome to a new round of Tic-Tac-Toe!")
+    print("Willkommen zu Tic-Tac-Toe!")
 player_names = get_player_names()
 print(player_names)
 board = create_board()
 display_board(board)
-print("Game setup complete. Ready to play!")
-print("Player 1 is 'X' and Player 2 is 'O'.")
-print("Player 1 goes first.")
+print("Spielsetup abgeschlossen. Bereit zum Spielen!")
+print("Spieler 1 is 'X' and Spieler 2 is 'O'.")
+print("Spieler 1 fängt an.")
 
-print("To place your mark, enter the number corresponding" \
-" to the position on the board.")
+print("Um deinen Zug zu machen, gib die Zahl ein, die zur Position auf dem Spielfeld passt.")
 
 
 for i in range(9):
     marker = "X" if i % 2 == 1 else "O"      
-    position = int(input("Enter the position for your move: "))
+    position = int(input("Füge deine Position ein (1-9): "))
     make_move(board, position, marker)
     display_board(board)
 
